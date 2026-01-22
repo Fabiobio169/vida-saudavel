@@ -1,0 +1,902 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Saudável - Emagrecimento Saudável</title>
+    <meta name="description" content="Site completo de emagrecimento com receitas detox, exercícios físicos, dietas balanceadas e orientação profissional via WhatsApp">
+    <meta name="keywords" content="emagrecimento, receitas detox, exercícios, dieta saudável, nutrição, fitness">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2E7D32",
+                        secondary: "#43A047",
+                        accent: "#FF9800",
+                        light: "#F1F8E9",
+                        dark: "#1B5E20"
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #2E7D32 0%, #43A047 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .whatsapp-float {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-3">
+                        <i class="fas fa-leaf text-white text-xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-dark font-montserrat">Vida<span class="text-primary">Saudável</span></h1>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <a href="#inicio" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-300">Início</a>
+                    <a href="#receitas" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-300">Receitas Detox</a>
+                    <a href="#exercicios" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-300">Exercícios</a>
+                    <a href="#dietas" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-300">Dietas</a>
+                    <a href="#contato" class="nav-link text-gray-700 hover:text-primary font-medium transition-colors duration-300">Contato</a>
+                </div>
+                
+                <button onclick="scrollToContact()" class="mt-4 md:mt-0 bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-dark transition-colors duration-300 shadow-md">
+                    Começar Agora
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient text-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 font-montserrat">Transforme sua vida com emagrecimento saudável</h2>
+                    <p class="text-xl mb-8 opacity-90">Receitas detox, exercícios eficientes e dietas balanceadas para você alcançar seus objetivos de forma natural e sustentável.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="scrollToReceitas()" class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+                            Ver Receitas
+                        </button>
+                        <button onclick="scrollToExercicios()" class="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300 shadow-lg">
+                            Ver Exercícios
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://labsul.com.br/wp-content/uploads/2023/01/estilo-de-vida-saudavel-labsul-varginha.jpg" alt="Vida fitness saudável" alt="Pessoa saudável e feliz" class="rounded-2xl shadow-2xl animate-slide-up" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Receitas Detox Section -->
+    <section id="receitas" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 font-montserrat">Receitas Detox Poderosas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Receitas naturais para desintoxicar o organismo e acelerar o metabolismo</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Receita 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover transition-all duration-300">
+                    <img src="https://receitadaboa.com.br/wp-content/uploads/2024/09/Suco-verde.jpg" alt="Detox Verde" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">MAIS POPULAR</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Detox Verde Energizante</h3>
+                        <p class="text-gray-600 mb-4">Ideal para começar o dia com energia e eliminar toxinas.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Ingredientes:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• 1 folha de couve</li>
+                                <li>• 1 maçã verde</li>
+                                <li>• 1 pepino</li>
+                                <li>• Suco de 1 limão</li>
+                                <li>• 200ml de água de coco</li>
+                                <li>• Gengibre a gosto</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Modo de Preparo:</h4>
+                            <p class="text-gray-600 text-sm">Bata todos os ingredientes no liquidificador e beba imediatamente. Consuma em jejum.</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">15 min</span>
+                            <span class="text-gray-500 text-sm">120 calorias</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Receita 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover transition-all duration-300">
+                    <img src="https://portaledicase.com/wp-content/uploads/2023/11/Suco-para-hidratar-o-corpo.jpg"Detox de Laranja" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">VITAMINA C</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Detox de Laranja com Gengibre</h3>
+                        <p class="text-gray-600 mb-4">Rico em vitamina C e propriedades anti-inflamatórias.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Ingredientes:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• 2 laranjas descascadas</li>
+                                <li>• 1 cenoura média</li>
+                                <li>• 1 pedaço de gengibre</li>
+                                <li>• 200ml de água</li>
+                                <li>• Folhas de hortelã</li>
+                                <li>• Gelo a gosto</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Modo de Preparo:</h4>
+                            <p class="text-gray-600 text-sm">Bata todos os ingredientes no liquidificador. Coe se preferir e sirva gelado.</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">10 min</span>
+                            <span class="text-gray-500 text-sm">95 calorias</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Receita 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover transition-all duration-300">
+                    <img src="https://nutriumstorageaccount.blob.core.windows.net/rails-active-storage/7vr0fyd7ieqfadubkzqm6d53chtu?sp=r&sv=2018-11-09&se=2026-02-21T11%3A39%3A52Z&rscd=inline%3B+filename%3D%22shutterstock_2602702821.jpg%22%3B+filename*%3DUTF-8%27%27shutterstock_2602702821.jpg&rsct=image%2Fjpeg&sr=b&sig=56rd13FHli50jm0V8NVsFmu9OQoyCbymv%2ByTJyEyTuk%3D" alt="Detox Vermelho" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-secondary text-white text-xs font-semibold px-3 py-1 rounded-full">ANTIOXIDANTE</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Detox Vermelho Antioxidante</h3>
+                        <p class="text-gray-600 mb-4">Combate radicais livres e auxilia na queima de gordura.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Ingredientes:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• 1 beterraba pequena</li>
+                                <li>• 1 maçã vermelha</li>
+                                <li>• 1/2 limão espremido</li>
+                                <li>• 200ml de água</li>
+                                <li>• 1 colher de chia</li>
+                                <li>• Gelo a gosto</li>
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Modo de Preparo:</h4>
+                            <p class="text-gray-600 text-sm">Bata todos os ingredientes, exceto a chia. Misture a chia e deixe descansar por 5 minutos.</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">12 min</span>
+                            <span class="text-gray-500 text-sm">110 calorias</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="showMoreRecipes()" class="bg-white text-primary border-2 border-primary px-8 py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition-colors duration-300">
+                    Ver Mais Receitas
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercícios Section -->
+    <section id="exercicios" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 font-montserrat">Exercícios para Emagrecimento</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Atividades físicas eficientes para queimar calorias e tonificar o corpo</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Exercício 1 -->
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-running text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-dark mb-3">Corrida/Caminhada</h3>
+                    <p class="text-gray-600 text-center mb-4">Exercício cardiovascular que queima até 400 calorias por hora.</p>
+                    <div class="text-center">
+                        <span class="inline-block bg-light text-primary px-3 py-1 rounded-full text-sm font-medium">30-60 min/dia</span>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-gray-700 mb-2">Benefícios:</h4>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• Melhora cardiovascular</li>
+                            <li>• Queima gordura abdominal</li>
+                            <li>• Aumenta resistência</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Exercício 2 -->
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-dumbbell text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-dark mb-3">Musculação</h3>
+                    <p class="text-gray-600 text-center mb-4">Aumenta massa muscular e acelera metabolismo basal.</p>
+                    <div class="text-center">
+                        <span class="inline-block bg-light text-primary px-3 py-1 rounded-full text-sm font-medium">3-4x/semana</span>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-gray-700 mb-2">Benefícios:</h4>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• Tonifica músculos</li>
+                            <li>• Aumenta metabolismo</li>
+                            <li>• Fortalece ossos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Exercício 3 -->
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-swimmer text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-dark mb-3">Natação</h3>
+                    <p class="text-gray-600 text-center mb-4">Exercício completo que trabalha todo o corpo sem impacto.</p>
+                    <div class="text-center">
+                        <span class="inline-block bg-light text-primary px-3 py-1 rounded-full text-sm font-medium">45 min/sessão</span>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-gray-700 mb-2">Benefícios:</h4>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• Baixo impacto</li>
+                            <li>• Trabalha todos músculos</li>
+                            <li>• Melhora respiração</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Exercício 4 -->
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 bg-dark rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-bicycle text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-dark mb-3">Ciclismo</h3>
+                    <p class="text-gray-600 text-center mb-4">Excelente para queimar calorias e fortalecer pernas.</p>
+                    <div class="text-center">
+                        <span class="inline-block bg-light text-primary px-3 py-1 rounded-full text-sm font-medium">30-45 min/dia</span>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-gray-700 mb-2">Benefícios:</h4>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• Fortalece pernas</li>
+                            <li>• Melhora equilíbrio</li>
+                            <li>• Reduz estresse</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-primary/10 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-dark mb-4 text-center">Dica do Especialista</h3>
+                <p class="text-gray-700 text-center max-w-3xl mx-auto">
+                    "Combine exercícios aeróbicos com musculação para melhores resultados. O ideal é fazer 150 minutos de atividade moderada por semana, distribuídos em pelo menos 3 dias. Lembre-se: consistência é mais importante que intensidade!"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dietas Section -->
+    <section id="dietas" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 font-montserrat">Planos Alimentares</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Dietas balanceadas para diferentes objetivos e perfis</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Dieta 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="bg-primary text-white p-6 text-center">
+                        <h3 class="text-2xl font-bold">Dieta Low Carb</h3>
+                        <p class="opacity-90">Para perda de peso acelerada</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-3xl font-bold text-primary">-2 a 4kg</span>
+                            <p class="text-gray-600">por mês</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-3">Alimentos Permitidos:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Carnes magras e peixes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Ovos e laticínios</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Vegetais verdes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Gorduras saudáveis</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-3">Alimentos a Evitar:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2"></i>
+                                    <span>Açúcares e doces</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2"></i>
+                                    <span>Pães e massas</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2"></i>
+                                    <span>Arroz e batata</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button onclick="showDietDetails('lowcarb')" class="bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-dark transition-colors duration-300">
+                                Ver Cardápio Completo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dieta 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg transform scale-105">
+                    <div class="bg-secondary text-white p-6 text-center relative">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                            MAIS POPULAR
+                        </div>
+                        <h3 class="text-2xl font-bold">Dieta Mediterrânea</h3>
+                        <p class="opacity-90">Equilíbrio e saúde</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-3xl font-bold text-secondary">-1 a 3kg</span>
+                            <p class="text-gray-600">por mês</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-3">Alimentos Principais:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Azeite de oliva</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Peixes e frutos do mar</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Frutas e vegetais</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Grãos integrais</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-3">Benefícios:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-heart text-red-400 mr-2"></i>
+                                    <span>Saúde cardiovascular</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-brain text-blue-400 mr-2"></i>
+                                    <span>Melhora cognitiva</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-weight text-green-400 mr-2"></i>
+                                    <span>Controle de peso</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button onclick="showDietDetails('mediterranea')" class="bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-green-600 transition-colors duration-300">
+                                Ver Cardápio Completo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dieta 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="bg-dark text-white p-6 text-center">
+                        <h3 class="text-2xl font-bold">Dieta Intermitente</h3>
+                        <p class="opacity-90">Jejum controlado</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center mb-6">
+                            <span class="text-3xl font-bold text-dark">-3 a 5kg</span>
+                            <p class="text-gray-600">por mês</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-3">Protocolos Comuns:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                    <span>16/8 (16h jejum, 8h alimentação)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                    <span>5:2 (5 dias normal, 2 dias restrito)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                    <span>24h (jejum de 24h 1-2x/semana)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-3">Benefícios:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-burn text-orange-400 mr-2"></i>
+                                    <span>Queima de gordura</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-cogs text-gray-400 mr-2"></i>
+                                    <span>Autofagia celular</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-sync-alt text-purple-400 mr-2"></i>
+                                    <span>Melhora metabólica</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button onclick="showDietDetails('intermitente')" class="bg-dark text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300">
+                                Ver Cardápio Completo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 font-montserrat">Fale Comigo no WhatsApp</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Tire suas dúvidas e receba orientação personalizada para seu emagrecimento</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <div class="bg-light rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-dark mb-6">Como posso te ajudar?</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <i class="fas fa-clipboard-check text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Avaliação Personalizada</h4>
+                                    <p class="text-gray-600">Analiso seus objetivos e crio um plano específico para você</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <i class="fas fa-utensils text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Plano Alimentar</h4>
+                                    <p class="text-gray-600">Desenvolvo cardápios adaptados ao seu estilo de vida</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <i class="fas fa-dumbbell text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Treino Personalizado</h4>
+                                    <p class="text-gray-600">Crio rotinas de exercícios eficientes para seus objetivos</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-dark rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                    <i class="fas fa-comments text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Acompanhamento Contínuo</h4>
+                                    <p class="text-gray-600">Suporte diário para dúvidas e ajustes no plano</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-slide-up">
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 shadow-lg border border-green-100">
+                        <div class="text-center mb-8">
+                            <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fab fa-whatsapp text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Conversa Direta</h3>
+                            <p class="text-gray-600">Respondo em até 24 horas</p>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-white p-4 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-gray-800 mb-2">📱 Envie uma mensagem agora:</h4>
+                                <p class="text-gray-600 mb-4">Clique no botão abaixo para iniciar nossa conversa no WhatsApp</p>
+                                
+                                <a href="https://wa.me/5538991626179?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20emagrecimento%20saudável" 
+                                   target="_blank"
+                                   class="block w-full bg-green-500 hover:bg-green-600 text-white text-center py-4 rounded-xl font-bold text-lg transition-colors duration-300 shadow-md">
+                                    <i class="fab fa-whatsapp mr-2"></i>
+                                    Falar no WhatsApp Agora
+                                </a>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-xl shadow-sm">
+                                <h4 class="font-bold text-gray-800 mb-2">💬 O que você pode perguntar:</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Dúvidas sobre as receitas detox</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Orientação sobre exercícios</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Personalização de dietas</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Acompanhamento personalizado</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="text-center text-gray-500 text-sm">
+                                <p>Horário de atendimento: Segunda a Sexta, 9h às 18h</p>
+                                <p>Respondo mensagens em até 24 horas úteis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center mr-3">
+                            <i class="fas fa-leaf text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-montserrat">Vida<span class="text-green-300">Saudável</span></h3>
+                    </div>
+                    <p class="text-gray-300">Transformando vidas através do emagrecimento saudável e sustentável.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-300 hover:text-white transition-colors duration-300">Início</a></li>
+                        <li><a href="#receitas" class="text-gray-300 hover:text-white transition-colors duration-300">Receitas Detox</a></li>
+                        <li><a href="#exercicios" class="text-gray-300 hover:text-white transition-colors duration-300">Exercícios</a></li>
+                        <li><a href="#dietas" class="text-gray-300 hover:text-white transition-colors duration-300">Dietas</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp text-green-400 mr-2"></i>
+                            <span class="text-gray-300">(38) 9 9162-6179</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-2"></i>
+                            <span class="text-gray-300">fabioaparecido705@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-yellow-400 mr-2"></i>
+                            <span class="text-gray-300">Seg-Sex: 9h-18h</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-300 mb-4">Receba dicas exclusivas de emagrecimento</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="flex-grow px-4 py-2 rounded-l-lg text-gray-800 focus:outline-none">
+                        <button class="bg-primary hover:bg-green-600 px-4 py-2 rounded-r-lg font-medium transition-colors duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Vida Saudável. Todos os direitos reservados.</p>
+                <p class="mt-2 text-sm">Este site tem caráter informativo. Consulte um profissional de saúde antes de iniciar qualquer dieta ou exercício.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5538991626179?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20emagrecimento%20saudável" 
+       target="_blank"
+       class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors duration-300 whatsapp-float z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Define data at the beginning
+        const recipes = [
+            {
+                "id": 1,
+                "title": "Detox Verde Energizante",
+                "description": "Ideal para começar o dia com energia e eliminar toxinas.",
+                "ingredients": [
+                    "1 folha de couve",
+                    "1 maçã verde",
+                    "1 pepino",
+                    "Suco de 1 limão",
+                    "200ml de água de coco",
+                    "Gengibre a gosto"
+                ],
+                "preparation": "Bata todos os ingredientes no liquidificador e beba imediatamente. Consuma em jejum.",
+                "time": "15 min",
+                "calories": "120 calorias",
+                "image": "https://receitadaboa.com.br/wp-content/uploads/2024/09/Suco-verde.jpg"
+            },
+            {
+                "id": 2,
+                "title": "Detox de Laranja com Gengibre",
+                "description": "Rico em vitamina C e propriedades anti-inflamatórias.",
+                "ingredients": [
+                    "2 laranjas descascadas",
+                    "1 cenoura média",
+                    "1 pedaço de gengibre",
+                    "200ml de água",
+                    "Folhas de hortelã",
+                    "Gelo a gosto"
+                ],
+                "preparation": "Bata todos os ingredientes no liquidificador. Coe se preferir e sirva gelado.",
+                "time": "10 min",
+                "calories": "95 calorias",
+                "image": "https://portaledicase.com/wp-content/uploads/2023/11/Suco-para-hidratar-o-corpo.jpg"
+            },
+            {
+                "id": 3,
+                "title": "Detox Vermelho Antioxidante",
+                "description": "Combate radicais livres e auxilia na queima de gordura.",
+                "ingredients": [
+                    "1 beterraba pequena",
+                    "1 maçã vermelha",
+                    "1/2 limão espremido",
+                    "200ml de água",
+                    "1 colher de chia",
+                    "Gelo a gosto"
+                ],
+                "preparation": "Bata todos os ingredientes, exceto a chia. Misture a chia e deixe descansar por 5 minutos.",
+                "time": "12 min",
+                "calories": "110 calorias",
+                "image": "https://nutriumstorageaccount.blob.core.windows.net/rails-active-storage/7vr0fyd7ieqfadubkzqm6d53chtu?sp=r&sv=2018-11-09&se=2026-02-21T11%3A39%3A52Z&rscd=inline%3B+filename%3D%22shutterstock_2602702821.jpg%22%3B+filename*%3DUTF-8%27%27shutterstock_2602702821.jpg&rsct=image%2Fjpeg&sr=b&sig=56rd13FHli50jm0V8NVsFmu9OQoyCbymv%2ByTJyEyTuk%3D"
+            }
+        ];
+
+        const exercises = [
+            {
+                "id": 1,
+                "title": "Corrida/Caminhada",
+                "description": "Exercício cardiovascular que queima até 400 calorias por hora.",
+                "duration": "30-60 min/dia",
+                "benefits": ["Melhora cardiovascular", "Queima gordura abdominal", "Aumenta resistência"],
+                "icon": "running"
+            },
+            {
+                "id": 2,
+                "title": "Musculação",
+                "description": "Aumenta massa muscular e acelera metabolismo basal.",
+                "duration": "3-4x/semana",
+                "benefits": ["Tonifica músculos", "Aumenta metabolismo", "Fortalece ossos"],
+                "icon": "dumbbell"
+            },
+            {
+                "id": 3,
+                "title": "Natação",
+                "description": "Exercício completo que trabalha todo o corpo sem impacto.",
+                "duration": "45 min/sessão",
+                "benefits": ["Baixo impacto", "Trabalha todos músculos", "Melhora respiração"],
+                "icon": "swimmer"
+            },
+            {
+                "id": 4,
+                "title": "Ciclismo",
+                "description": "Excelente para queimar calorias e fortalecer pernas.",
+                "duration": "30-45 min/dia",
+                "benefits": ["Fortalece pernas", "Melhora equilíbrio", "Reduz estresse"],
+                "icon": "bicycle"
+            }
+        ];
+
+        const diets = [
+            {
+                "id": 1,
+                "name": "Dieta Low Carb",
+                "description": "Para perda de peso acelerada",
+                "weightLoss": "-2 a 4kg",
+                "period": "por mês",
+                "allowed": ["Carnes magras e peixes", "Ovos e laticínios", "Vegetais verdes", "Gorduras saudáveis"],
+                "avoid": ["Açúcares e doces", "Pães e massas", "Arroz e batata"],
+                "color": "primary"
+            },
+            {
+                "id": 2,
+                "name": "Dieta Mediterrânea",
+                "description": "Equilíbrio e saúde",
+                "weightLoss": "-1 a 3kg",
+                "period": "por mês",
+                "allowed": ["Azeite de oliva", "Peixes e frutos do mar", "Frutas e vegetais", "Grãos integrais"],
+                "benefits": ["Saúde cardiovascular", "Melhora cognitiva", "Controle de peso"],
+                "color": "secondary"
+            },
+            {
+                "id": 3,
+                "name": "Dieta Intermitente",
+                "description": "Jejum controlado",
+                "weightLoss": "-3 a 5kg",
+                "period": "por mês",
+                "protocols": ["16/8 (16h jejum, 8h alimentação)", "5:2 (5 dias normal, 2 dias restrito)", "24h (jejum de 24h 1-2x/semana)"],
+                "benefits": ["Queima de gordura", "Autofagia celular", "Melhora metabólica"],
+                "color": "dark"
+            }
+        ];
+
+        // Navigation functions
+        function scrollToReceitas() {
+            document.getElementById('receitas').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToExercicios() {
+            document.getElementById('exercicios').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToContact() {
+            document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show more recipes
+        function showMoreRecipes() {
+            alert('Mais receitas serão carregadas em breve! Envie uma mensagem no WhatsApp para receber nosso ebook completo com 50 receitas detox.');
+        }
+
+        // Show diet details
+        function showDietDetails(dietType) {
+            let message = "";
+            switch(dietType) {
+                case 'lowcarb':
+                    message = "Cardápio Low Carb Completo:\n\nCafé da Manhã:\n- 2 ovos mexidos\n- 1 fatia de queijo branco\n- 1 xícara de chá verde\n\nAlmoço:\n- 150g de frango grelhado\n- Salada verde à vontade\n- 1 colher de azeite\n\nJantar:\n- 150g de peixe assado\n- Legumes cozidos\n- 1 porção de abacate";
+                    break;
+                case 'mediterranea':
+                    message = "Cardápio Mediterrâneo Completo:\n\nCafé da Manhã:\n- Iogurte natural com frutas vermelhas\n- 1 fatia de pão integral\n- Azeite de oliva\n\nAlmoço:\n- Salada grega com atum\n- 1 porção de quinoa\n- 1 taça de vinho tinto (opcional)\n\nJantar:\n- Sopa de legumes\n- 1 porção de peixe grelhado\n- Salada verde";
+                    break;
+                case 'intermitente':
+                    message = "Protocolo Intermitente 16/8:\n\nJanela de alimentação: 12h às 20h\n\n12h (Primeira refeição):\n- Omelete com vegetais\n- 1 fruta\n\n15h (Lanche):\n- Iogurte natural\n- Castanhas\n\n18h (Jantar):\n- Proteína magra\n- Vegetais variados\n- Gordura saudável";
+                    break;
+            }
+            alert(message + "\n\nPara um plano personalizado, entre em contato via WhatsApp!");
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Newsletter subscription
+        document.querySelector('footer button').addEventListener('click', function() {
+            const emailInput = document.querySelector('footer input[type="email"]');
+            if(emailInput.value && emailInput.value.includes('@')) {
+                alert('Obrigado por se inscrever! Você receberá nossas dicas em breve.');
+                emailInput.value = '';
+            } else {
+                alert('Por favor, insira um e-mail válido.');
+            }
+        });
+
+        // Initialize animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
